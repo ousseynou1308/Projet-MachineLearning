@@ -21,7 +21,7 @@ st.markdown(
 uploaded_file = st.file_uploader("", type="csv", label_visibility="collapsed")
 if uploaded_file is not None:
     st.success("✅ Fichier chargé avec succès : " + uploaded_file.name)
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv(uploaded_file, sep=";")
     st.write("## Aperçu du fichier :", df.head())
 
     # Vérification des colonnes attendues
@@ -114,3 +114,4 @@ if uploaded_file is not None:
 
             else:
                 st.error("Erreur lors de la requête à l'API.")
+
