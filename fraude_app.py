@@ -56,7 +56,7 @@ if uploaded_file is not None:
     else:
         if st.button("Lancer la prédiction"):
             response = requests.post(
-                "http://127.0.0.1:8000/predict/",
+                "fastapi-production-detectionfraude.up.railway.app/predict/",
                 files={"file": uploaded_file.getvalue()}
             )
 
@@ -114,4 +114,5 @@ if uploaded_file is not None:
 
             else:
                 st.error("Erreur lors de la requête à l'API.")
+
 
